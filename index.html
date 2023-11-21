@@ -8,6 +8,22 @@
 <body>
 
     <script>
+
+      // Create a function that will randomly return "Rock", "Paper" or "Scissor"
+      // This function is used for the computer's game turn
+
+        function getComputerChoice() {
+                let choice = Math.random();
+                if (choice <= 0.33) {
+                    console.log("Rock");
+                }
+                else if (choice > 0.33 && choice <= 0.66) {
+                    console.log("Paper");
+                }
+                else {
+                    console.log("Scissor");
+                }
+            }
         
     </script>
     
