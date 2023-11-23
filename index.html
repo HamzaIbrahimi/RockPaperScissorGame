@@ -11,45 +11,38 @@
 
       // Create a function that will randomly return "Rock", "Paper" or "Scissor"
       // This function is used for the computer's game turn
+    function getComputerChoice() {
+        let options = ["rock","paper","scissors"];
+        let choice = options[Math.floor(Math.random() * options.length)];
+        return choice;
+    }
 
-        function getComputerChoice() {
-            let options = ["Rock", "Paper", "Scissor"];
-            let choice = options[Math.floor(Math.random() * options.length)];
+    // Create a function that plays a single round and declare winning/losing/tieing scenarios
 
-            if (choice === "Rock") {
-                return "Rock";
-            }
-            else if (choice === "Paper") {
-                return "Paper";
-            }
-            else {
-                return "Scissor";
-            }
+    function playRound(playerSelection, computerSelection) {
+        // case insensitivity
+        playerSelection = playerSelection.toLowerCase();
+        //Winning Scenarios
+        if (
+            (playerSelection === "rock" && computerSelection === "scissors") ||
+            (playerSelection === "scissors" && computerSelection === "paper") ||
+            (playerSelection === "paper" && computerSelection === "rock")) {
+            return `You Win! ${playerSelection} Beats ${computerSelection}`;
         }
+        //Tie Scenario
+        else if (playerSelection === computerSelection) {
+            return `It is a Tie! NO WINNERS, you both picked ${playerSelection}`;
+        }
+        //Losing Scenarios
+        else {
+            return `you lose ${computerSelection} Beats ${playerSelection}`;
+        }
+    }
+    playerSelection = prompt("Pick: Paper Scissors or Rock");
+    computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
 
-        // Create a function that plays a single round and declare winning/losing/tieing scenarios
-
-        function playRound(playerSelection, computerSelection) {
-
-                //Winning Scenarios
-                if (
-                    (playerSelection === "Rock" && computerSelection === "Scissor") ||
-                    (playerSelection === "Scissor" && computerSelection === "Paper") ||
-                    (playerSelection === "Paper" && computerSelection === "Rock")) {
-                    return `You Win! ${playerSelection} Beats ${computerSelection}`;
-                }
-                //Tie Scenario
-                else if (playerSelection === computerSelection) {
-                    return `It is a Tie! NO WINNERS, you both picked ${playerSelection}`;
-                }
-                //Losing Scenarios
-                else {
-                    return `you lose ${computerSelection} Beats ${playerSelection}`;
-                }
-            }
-        playerSelection = prompt("Pick paper Scissor or Rock".toLowerCase());
-        computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection,computerSelection));
+  
     </script>
     
 </body>
