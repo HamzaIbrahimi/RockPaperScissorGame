@@ -26,6 +26,31 @@
                 return "Scissor";
             }
         }
+
+        // Create a function that plays a single round and declare the Winner/Loser/Tie
+        function playRound (playerSelection,computerSelection) {
+  
+   
+  //Winning Scenarios
+            if (playerSelection === "Rock" && computerSelection === "Scissor") {
+                return "You Win! Rock Beats Scissor";
+            }
+            else if (playerSelection === "Scissor" && computerSelection === "Paper") {
+                return "You Win, Scissor Beats Paper";
+            }
+            else if (playerSelection === "Paper" && computerSelection === "Rock") {
+                return "You Win, Paper Beats Rock";
+            }
+            //Tie Scenario
+            else if (playerSelection === computerSelection) {
+                return `It is a Tie! NO WINNERS, you both picked ${playerSelection}`;
+            }
+            //Losing Scenarios
+            else {
+                return `you lose ${computerSelection} Beats ${playerSelection}`;
+            }
+
+        }
         
     </script>
     
