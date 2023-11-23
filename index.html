@@ -12,14 +12,14 @@
       // Create a function that will randomly return "Rock", "Paper" or "Scissor"
       // This function is used for the computer's game turn
 
-      function getComputer () {
-            let options =  ["Rock", "Paper", "Scissor"];
-            let choice = options[Math.floor(Math.random()*options.length)];
+        function getComputer() {
+            let options = ["Rock", "Paper", "Scissor"];
+            let choice = options[Math.floor(Math.random() * options.length)];
 
             if (choice === "Rock") {
                 return "Rock";
             }
-            else if (choice ==="Paper") {
+            else if (choice === "Paper") {
                 return "Paper";
             }
             else {
@@ -27,11 +27,9 @@
             }
         }
 
-        // Create a function that plays a single round and declare the Winner/Loser/Tie
-        function playRound (playerSelection,computerSelection) {
-  
-   
-  //Winning Scenarios
+        // Create a function that plays a single round and declare winning/losing/tieing scenarios
+        function playRound(playerSelection, computerSelection) {
+            //Winning Scenarios
             if (playerSelection === "Rock" && computerSelection === "Scissor") {
                 return "You Win! Rock Beats Scissor";
             }
