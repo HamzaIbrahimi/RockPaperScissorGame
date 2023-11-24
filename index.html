@@ -45,22 +45,44 @@
             }
             //Losing Scenarios
             else {
-                return `You lose! ${capitalizeFirstLetter(computerSelection)}  Beats ${capitalizeFirstLetter(playerSelection)} `;
+                return `You Lose! ${capitalizeFirstLetter(computerSelection)}  Beats ${capitalizeFirstLetter(playerSelection)} `;
             }
         }
+
+        // create a function that gives 1 point for each round 1 by P or C
+            function updateScores (roundResult) {
+            if (roundResult.includes("You Win!")) {
+                playerScore++;
+            }
+            else if (roundResult.includes("You Lose!")) {
+               computerScore++;
+            }
+
+        }
+
+
+
         function game() {
 
 
             //for loop to play a best out of 5
-            for (let round = 1; round <= 5; round++) {
+            for (let round = 1; round <= 100; round++) {
+                if (playerScore === 3 || computerScore === 3) {
+                    break;
+                }
+                console.log(`--Round ${round}--`);
                 let playerSelection = prompt("Pick: Rock, Paper or Scissor");
                 let computerSelection = getComputerChoice();
                 let roundResult = playRound(playerSelection, computerSelection);
+                updateScores(roundResult);
                 console.log(roundResult);
+                console.log(`Player Score: ${playerScore} & Computer Score: ${computerScore} `);
             }
         }
 
-        console.log(game());
+ 
+
+        game();
 
 
 
