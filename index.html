@@ -60,8 +60,6 @@
 
         }
 
-
-
         function game() {
 
 
@@ -80,9 +78,21 @@
             }
         }
 
+        function determineWinner () {
+
+            console.log(`Final Score: Player Score ${playerScore} & Computer Score ${computerScore}`);
+            if (playerScore > computerScore) {
+                console.log("Player Wins! ");
+            }
+            else if (playerScore < computerScore) {
+                console.log("Computer Wins!");
+            }
+        }
+
  
 
         game();
+        determineWinner();
 
 
 
