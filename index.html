@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor Game JS</title>
 </head>
+
 <body>
 
     <script>
+        let playerScore = 0;
+        let computerScore = 0;
 
-      // Create a function that will randomly return "Rock", "Paper" or "Scissor"
+        // Create a function that will randomly return "Rock", "Paper" or "Scissor"
         // This function is used for the computer's game turn
         function getComputerChoice() {
             let options = ["rock", "paper", "scissors"];
             let choice = options[Math.floor(Math.random() * options.length)];
             return choice;
+        }
+
+        //Add function to capitalize first letter in R/P/S
+        function capitalizeFirstLetter(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
         }
 
         // Create a function that plays a single round and declare winning/losing/tieing scenarios
@@ -40,8 +49,7 @@
             }
         }
         function game() {
-            let playerScore = 0;
-            let computerScore = 0;
+
 
             //for loop to play a best out of 5
             for (let round = 1; round <= 5; round++) {
@@ -55,15 +63,13 @@
         console.log(game());
 
 
-        //Add function to capitalize first letter
-        function capitalizeFirstLetter(word) {
-            return word.charAt(0).toUpperCase() + word.slice(1);
-        }
-    
+
+
 
 
 
     </script>
-    
+
 </body>
+
 </html>
