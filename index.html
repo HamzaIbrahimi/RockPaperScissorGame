@@ -10,8 +10,7 @@
 <body>
 
     <script>
-        let playerScore = 0;
-        let computerScore = 0;
+
 
         // Create a function that will randomly return "Rock", "Paper" or "Scissor"
         // This function is used for the computer's game turn
@@ -50,15 +49,20 @@
         }
 
         // create a function that gives 1 point for each round 1 by P or C
-            function updateScores (roundResult) {
+        let playerScore = 0;
+        let computerScore = 0;
+        function updateScores(roundResult) {
+
             if (roundResult.includes("You Win!")) {
                 playerScore++;
             }
             else if (roundResult.includes("You Lose!")) {
-               computerScore++;
+                computerScore++;
             }
 
         }
+
+
 
         function game() {
 
@@ -68,8 +72,8 @@
                 if (playerScore === 3 || computerScore === 3) {
                     break;
                 }
-                console.log(`--Round ${round}--`);
-                let playerSelection = prompt("Pick: Rock, Paper or Scissor");
+                console.log(`-- Round ${round} --`);
+                let playerSelection = prompt("Pick: Rock, Paper or Scissors");
                 let computerSelection = getComputerChoice();
                 let roundResult = playRound(playerSelection, computerSelection);
                 updateScores(roundResult);
@@ -78,7 +82,7 @@
             }
         }
 
-        function determineWinner () {
+        function determineWinner() {
 
             console.log(`Final Score: Player Score ${playerScore} & Computer Score ${computerScore}`);
             if (playerScore > computerScore) {
@@ -89,7 +93,7 @@
             }
         }
 
- 
+
 
         game();
         determineWinner();
