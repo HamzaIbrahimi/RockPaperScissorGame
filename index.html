@@ -5,106 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor Game JS</title>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <script>
 
-
-        // Create a function that will randomly return "Rock", "Paper" or "Scissor"
-        // This function is used for the computer's game turn
-        function getComputerChoice() {
-            let options = ["rock", "paper", "scissors"];
-            let choice = options[Math.floor(Math.random() * options.length)];
-            return choice;
-        }
-
-        //Add function to capitalize first letter in R/P/S
-        function capitalizeFirstLetter(word) {
-            return word.charAt(0).toUpperCase() + word.slice(1);
-        }
-
-        // Create a function that plays a single round and declare winning/losing/tieing scenarios
-
-        function playRound(playerSelection, computerSelection) {
-            // case sensitivity consideration: 
-            playerSelection = playerSelection.toLowerCase();
-
-            //Winning Scenarios
-            if (
-                (playerSelection === "rock" && computerSelection === "scissors") ||
-                (playerSelection === "scissors" && computerSelection === "paper") ||
-                (playerSelection === "paper" && computerSelection === "rock")) {
-                return `You Win! ${capitalizeFirstLetter(playerSelection)} Beats ${capitalizeFirstLetter(computerSelection)}`;
-            }
-            //Tie Scenario
-            else if (playerSelection === computerSelection) {
-                return `It is a Tie! NO WINNERS, you both picked ${capitalizeFirstLetter(playerSelection)}`;
-            }
-            //Losing Scenarios
-            else {
-                return `You Lose! ${capitalizeFirstLetter(computerSelection)}  Beats ${capitalizeFirstLetter(playerSelection)} `;
-            }
-        }
-
-        // create a function that gives 1 point for each round 1 by P or C
-        let playerScore = 0;
-        let computerScore = 0;
-        function updateScores(roundResult) {
-
-            if (roundResult.includes("You Win!")) {
-                playerScore++;
-            }
-            else if (roundResult.includes("You Lose!")) {
-                computerScore++;
-            }
-
-        }
-
-
-
-        function game() {
-
-
-            //for loop to play a best out of 5
-            for (let round = 1; round <= 100; round++) {
-                if (playerScore === 3 || computerScore === 3) {
-                    break;
-                }
-                console.log(`-- Round ${round} --`);
-                let playerSelection = prompt("Pick: Rock, Paper or Scissors");
-                let computerSelection = getComputerChoice();
-                let roundResult = playRound(playerSelection, computerSelection);
-                updateScores(roundResult);
-                console.log(roundResult);
-                console.log(`Player Score: ${playerScore} & Computer Score: ${computerScore} `);
-            }
-        }
-
-        function determineWinner() {
-
-            console.log(`Final Score: Player Score ${playerScore} & Computer Score ${computerScore}`);
-            if (playerScore > computerScore) {
-                console.log("Player Wins! ");
-            }
-            else if (playerScore < computerScore) {
-                console.log("Computer Wins!");
-            }
-        }
-
-
-
-        game();
-        determineWinner();
-
-
-
-
-
-
-
-    </script>
 
 </body>
 
