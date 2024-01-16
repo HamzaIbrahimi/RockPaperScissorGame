@@ -6,13 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor Game JS</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Main Header for Index -->
+   <header class="main_header">
+        <h1>ROCK | PAPER | SCISSORS</h1>
+   </header>
 
-        <div>
-            
+   <!-- Section for Game Area -->
+   <div class="main_container">
+        <header class="container_header">
+            <h3>Can you Beat the Computer?</h3>
+            <div>This is a Best out of 3 Game</div>
+            <div>Make your Choice <span>⬇️</span></div>
+        </header>
+        
+        <div class="choices_container">
+            <button class="choice rock">✊🏾 <span>Rock</span></button>
+            <button class="choice paper">🖐🏾<span>Paper</span></button>
+            <button class="choice scissors">✌🏾<span>Scissor</span></button>
         </div>
+
+        <div class="results_container">
+            <div>Results Shown Here </div>
+            <p id="update_score"></p>
+            <p id="determine_winner"></p>
+            <button id="reset">Reset: Play Again!</button>
+        </div>
+   </div>
 
 
 </body>
