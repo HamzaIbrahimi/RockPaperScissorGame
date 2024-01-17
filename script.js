@@ -1,3 +1,12 @@
+//Create Global Variables for DOM manipulation
+const button_rock = document.querySelector('.rock');
+const button_paper = document.querySelector('.paper');
+const button_scissors = document.querySelector('.scissors');
+const reset_button = document.querySelector('#reset');
+const para_score = document.querySelector('#update_score');
+const para_winner = document.querySelector('#determine_winner');
+console.log(para_score,para_winner,reset_button);
+
 // Create a function that will randomly return "Rock", "Paper" or "Scissor"
 // This function is used for the computer's game turn
 function getComputerChoice() {
@@ -81,5 +90,5 @@ function determineWinner() {
   }
 }
 
-game();
-determineWinner();
+// game();
+// determineWinner();
