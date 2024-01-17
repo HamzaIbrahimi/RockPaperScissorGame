@@ -7,8 +7,7 @@
 body {
     background-image: url(images/autumn-studio-221wufG10eg-unsplash.jpg);
     background-size: cover;
-    font-family: sans-serif;
-    
+    font-family:monospace;
 }
 
 .main_header {
@@ -24,7 +23,6 @@ body {
 }
 
 .main_container {
-    border: 1px solid black;
     height: 100vh;  
     display: flex;
     flex-direction: column;
@@ -36,7 +34,6 @@ body {
     text-align: center;
     width: 1000px;
     margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 
@@ -72,6 +69,9 @@ body {
     align-items: center;
     font-size: 24px;
 }
+.results {
+    color: aqua;
+}
 
 #update_score,
 #determine_winner
@@ -81,6 +81,7 @@ body {
     width: 600px;
     color: black;
     border-radius: 12px;
+    text-align: center;
 }
 
 
@@ -100,4 +101,5 @@ span {
     font-size: 30px;
     display: block;
 }
+
 
