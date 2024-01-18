@@ -2,29 +2,41 @@
 const button_rock = document.querySelector('.rock');
 const button_paper = document.querySelector('.paper');
 const button_scissors = document.querySelector('.scissors');
-const reset_button = document.querySelector('#reset');
+const buttons = document.querySelectorAll('.choice');
+const reset_button = document.querySelector('#reset')
 const para_score = document.querySelector('#update_score');
 const para_winner = document.querySelector('#determine_winner');
-console.log(para_score,para_winner,reset_button);
+let playerSelection;
+let computerSelection;
+
+
+
+
 
 // Create a function that will randomly return "Rock", "Paper" or "Scissor"
 // This function is used for the computer's game turn
 function getComputerChoice() {
   let options = ["rock", "paper", "scissors"];
-  let choice = options[Math.floor(Math.random() * options.length)];
-  return choice;
+  let computerSelection = options[Math.floor(Math.random() * options.length)];
+  return computerSelection;
 }
 
-//Add function to capitalize first letter in R/P/S
-function capitalizeFirstLetter(word) {
-  return word.charAt(0).toUpperCase() + word.slice(1);
-}
 
 // Create a function that plays a single round and declare winning/losing/tieing scenarios
 
-function playRound(playerSelection, computerSelection) {
-  // case sensitivity consideration:
-  playerSelection = playerSelection.toLowerCase();
+function playRound() {
+  //get player choice
+  buttons.forEach((button) => {
+    if (button.className = 'choice rock') {
+      playerSelection = 'rock';
+    }
+    else if (button.className ='choice paper') {
+      playerSelection = 'paper';
+    }
+    else if (button.className = 'choice scissors') {
+      playerSelection = 'scissors'
+    }
+  })
 
   //Winning Scenarios
   if (
@@ -32,23 +44,24 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper") ||
     (playerSelection === "paper" && computerSelection === "rock")
   ) {
-    return `You Win! ${capitalizeFirstLetter(
-      playerSelection
-    )} Beats ${capitalizeFirstLetter(computerSelection)}`;
+    para_score.textContent= `You Win! ${playerSelection} Beats ${computerSelection}`;
   }
   //Tie Scenario
   else if (playerSelection === computerSelection) {
-    return `It is a Tie! NO WINNERS, you both picked ${capitalizeFirstLetter(
-      playerSelection
-    )}`;
+    para_score.textContent= `It is a Tie! NO WINNERS, you both picked ${playerSelection}`;
   }
   //Losing Scenarios
   else {
-    return `You Lose! ${capitalizeFirstLetter(
-      computerSelection
-    )}  Beats ${capitalizeFirstLetter(playerSelection)} `;
+    para_score.textContent= `You Lose! ${computerSelection} Beats ${playerSelection} `;
   }
 }
+
+computerSelection = getComputerChoice();
+button_rock.addEventListener('click', playRound);
+button_paper.addEventListener('click',playRound);
+button_scissors.addEventListener('click', playRound);
+
+
 
 // create a function that gives 1 point for each round 1 by P or C
 let playerScore = 0;
@@ -61,34 +74,57 @@ function updateScores(roundResult) {
   }
 }
 
-function game() {
-  //for loop to play a best out of 5
-  for (let round = 1; round <= 100; round++) {
-    if (playerScore === 3 || computerScore === 3) {
-      break;
-    }
-    console.log(`-- Round ${round} --`);
-    let playerSelection = prompt("Pick: Rock, Paper or Scissors");
-    let computerSelection = getComputerChoice();
-    let roundResult = playRound(playerSelection, computerSelection);
-    updateScores(roundResult);
-    console.log(roundResult);
-    console.log(
-      `Player Score: ${playerScore} & Computer Score: ${computerScore} `
-    );
-  }
-}
 
-function determineWinner() {
-  console.log(
-    `Final Score: Player Score ${playerScore} & Computer Score ${computerScore}`
-  );
-  if (playerScore > computerScore) {
-    console.log("Player Wins! ");
-  } else if (playerScore < computerScore) {
-    console.log("Computer Wins!");
-  }
-}
 
+
+
+
+
+
+// function game() {
+//   for loop to play a best out of 3
+//   for (let round = 1; round <= 10; round++) {
+//     if (playerScore === 3 || computerScore === 3) {
+//       break;
+//     };
+//     let computerSelection = getComputerChoice();
+    
+
+//     let roundResult = playRound(playerSelection,computerSelection);
+//     updateScores(roundResult);
+//     console.log(roundResult);
+
+
+
+
+  
+    
+    
+ 
+//    console.log(`-- Round ${round} --`);
+//     let playerSelection = getPlayerChoice();
+    
+//     let roundResult = playRound(playerSelection, computerSelection);
+//     updateScores(roundResult);
+//     console.log(roundResult);
+   
+//     console.log(
+//       `Player Score: ${playerScore} & Computer Score: ${computerScore} `
+//     ); 
+   
+//     }
+
+//   }
+
+// function determineWinner() {
+//   console.log(
+//     `Final Score: Player Score ${playerScore} & Computer Score ${computerScore}`
+//   );
+//   if (playerScore > computerScore) {
+//     console.log("Player Wins! ");
+//   } else if (playerScore < computerScore) {
+//     console.log("Computer Wins!");
+//   }
+// }
 // game();
 // determineWinner();
