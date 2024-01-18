@@ -5,9 +5,8 @@
 }
 
 body {
-    background-image: url(images/autumn-studio-221wufG10eg-unsplash.jpg);
-    background-size: cover;
     font-family:monospace;
+    background: #FAF9F6;
 }
 
 .main_header {
@@ -43,23 +42,21 @@ body {
    justify-content: space-around;
     width: 1000px;
     flex: 0;
-
 }
 
  .choices_container button{
     padding: 50px 80px;
     cursor: pointer;
-    background-image: url(images/autumn-studio-221wufG10eg-unsplash.jpg);
-    background-size: contain;
     border: none;
     border-radius: 40px;
  }
+
  .choice {
-    font-size: 60px;
+    font-size: 50px;
  }
+
 .choice:hover {
     border: 1px solid black;
-
 }
 
 .results_container {
@@ -68,22 +65,22 @@ body {
     gap: 6px;
     align-items: center;
     font-size: 24px;
+    margin-bottom: 5px;
 }
 .results {
-    color: aqua;
+    color: #000;
 }
 
 #update_score,
 #determine_winner
  {
-    background: #fff;
-    height: 50px;
+    background: #000;
+    height: 80px;
     width: 600px;
-    color: black;
+    color: white;
     border-radius: 12px;
     text-align: center;
 }
-
 
 #reset {
     font-size: 24px;
