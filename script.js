@@ -1,7 +1,4 @@
 //Create Global Variables for DOM manipulation
-const button_rock = document.querySelector('#rock');
-const button_paper = document.querySelector('#paper');
-const button_scissors = document.querySelector('#scissors');
 const buttons = document.querySelectorAll('.choice');
 const reset_button = document.querySelector('#reset')
 const para_score = document.querySelector('#update_score');
@@ -11,7 +8,6 @@ para_score.textContent = "-- Each Round Outcome Displayed here --"
 para_fullscore.textContent = "-- Scores Displayed Here --"
 para_winner.textContent = "-- Winner Displayed here --";
 reset_button.style.display = 'none';
-
 let playerScore = 0;
 let computerScore = 0;
 
